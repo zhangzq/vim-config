@@ -29,6 +29,9 @@ call plug#begin('~/.vim/bundle')
 
 Plug 'DoxygenToolkit.vim'
 Plug 'ericcurtin/CurtineIncSw.vim'
+nmap <F5> :call CurtineIncSw()<CR>
+imap <F5> <ESC>:call CurtineIncSw()<CR>
+
 
 " ################### 基础 ######################
 
@@ -105,6 +108,7 @@ let g:ycm_seed_identifiers_with_syntax=1   "语言关键字补全, 不过python�
 let g:ycm_goto_buffer_command = 'horizontal-split'
 " nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <F12> :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>gd :YcmCompleter GoToDeclaration<CR>
 
 " 引入，可以补全系统，以及python的第三方包 针对新老版本YCM做了兼容

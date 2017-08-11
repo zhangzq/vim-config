@@ -309,65 +309,32 @@ nnoremap gj j
 " I can type :help on my own, thanks.  Protect your fat fingers from the evils of <F1>
 noremap <F1> <Esc>"
 
-""为方便复制，用<F2>开启/关闭行号显示:
-function! HideNumber()
-  if(&relativenumber == &number)
-    set relativenumber! number!
-  elseif(&number)
-    set number!
-  else
-    set relativenumber!
-  endif
-  set number?
-endfunc
-nmap <F2> :w<CR>
-imap <F2> <ESC>:w<CR>
-nmap <F3> :w<CR>:bd<CR>
-imap <F3> <ESC>:w<CR>:bd<CR>
+map <F2> :bprevious<CR>
+imap <F2> <ESC>:bprevious<CR>
+map <F3> :bnext<CR>
+imap <F3> <ESC>:bnext<CR>
+" F4 switch .h/.cpp
+" defined on vimrc.bundles
 
-nnoremap <F11> :call HideNumber()<CR>
-" nmap <F3> :setlocal spell spelllang=en<CR>
-" imap <F3> <ESC>:setlocal spell spelllang=en<CR>i
-" nmap <S-F3> :setlocal nospell<CR>
-" imap <S-F3> <ESC>:setlocal nospell<CR>i
-" switch between header/source with F4 in C/C++ using a.vim
-nmap <F4> :A<CR>
-imap <F4> <ESC>:A<CR>i
-" currently S-F4 does not work in KDE konsole. Don't know why.
-nmap <S-F4> :AV<CR>
-imap <S-F4> <ESC>:AV<CR>i
-" recreate tags file with F5
-" map <F5> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+" ycm
 nmap <F5> :YcmDiags<Cr>
 imap <F5> <ESC>:YcmDiags<CR>i
-" create doxygen comment
-map <F6> ]l
-imap <F6> <ESC>]l
-nnoremap <F7> :w<cr>:make -j<cr>
+map <F6> :YcmCompleter FixIt<CR>
+
 " build using makeprg with <F7>
+nnoremap <F7> :w<cr>:make -j<cr>
 nmap <F7> :w<CR>:make -j<CR>
 imap <F7> <ESC>:w<CR>:make -j<CR>
-" clean build using makeprg with <S-F7>
-map <S-F7> :make clean all<CR>
-" Simple hexify/unhexify
-noremap <F8> :call <sid>Hexify()<CR>
-" Apply YCM FixIt
-map <F9> :YcmCompleter FixIt<CR>
-" remove trailing spaces
-map <F10> :%s/\s\+$//<CR>
-" goto definition with F12
-map <F12> <C-]>
-" open definition in new split
-"map <S-F12> <C-W> <C-]>
-map <S-F12> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
-"
-              "set paste
-set pastetoggle=<F5>            "    when in insert mode, press <F5> to go to
+
+" set paste
+set pastetoggle=<F8>            "    when in insert mode, press <F5> to go to
                                 "    paste mode, where you can paste mass data
                                 "    that won't be autoindented
+" F12 jump to definition
+" defined in vimrc.bundles
 
 " disbale paste mode when leaving insert mode
-au InsertLeave * set nopaste
+" au InsertLeave * set nopaste
 
 " nnoremap <F6> :exec exists('syntax_on') ? 'syn off' : 'syn on'<CR>
 
@@ -521,8 +488,17 @@ nnoremap <C-y> 2<C-y>
 
 " Quickly close the current window
 nnoremap <leader>q :q<CR>
+inoremap <leader>q <ESC>:q<CR>
+
 " Quickly save the current file
 nnoremap <leader>w :w<CR>
+inoremap <leader>w <ESC>:w<CR>i
+
+nnoremap <leader>x :x<CR>
+inoremap <leader>x <ESC>:x<CR>
+
+nnoremap <leader>c :w<CR>:bd<CR>
+inoremap <leader>c <ESC>:w<CR>:bd<CR>
 
 " Swap implementations of ` and ' jump to markers
 " By default, ' jumps to the marked line, ` jumps to the marked line and
