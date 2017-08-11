@@ -486,6 +486,9 @@ nnoremap <C-y> 2<C-y>
 "nmap t o<ESC>k
 "nmap T O<ESC>j
 
+nmap <leader>d A<TAB><TAB>/**<   */<ESC>Bhhi
+inoremap <leader>d <ESC>:w<CR>:bd<CR>
+
 " Quickly close the current window
 nnoremap <leader>q :q<CR>
 inoremap <leader>q <ESC>:q<CR>
@@ -499,6 +502,8 @@ inoremap <leader>x <ESC>:x<CR>
 
 nnoremap <leader>c :w<CR>:bd<CR>
 inoremap <leader>c <ESC>:w<CR>:bd<CR>
+
+
 
 " Swap implementations of ` and ' jump to markers
 " By default, ' jumps to the marked line, ` jumps to the marked line and
@@ -704,3 +709,5 @@ function! AutoChangeModifiedTime()
 endfunc
 
 autocmd BufWritePre,FileWritePre,FileAppendPre *.c,*.h,*.cpp,*.py execute ":call AutoChangeModifiedTime()"
+
+
