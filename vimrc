@@ -74,18 +74,18 @@ set noswapfile
 
 
 "create undo file
-if has('persistent_undo')
-  set undolevels=1000         " How many undos
-  set undoreload=10000        " number of lines to save for undo
-  set undofile                " So is persistent undo ...
-  set undodir=/tmp/vimundo/
-endif
+" if has('persistent_undo')
+  " set undolevels=1000         " How many undos
+  " set undoreload=10000        " number of lines to save for undo
+  " set undofile                " So is persistent undo ...
+  " set undodir=/tmp/vimundo/
+" endif
 
 set wildignore=*.swp,*.bak,*.pyc,*.class,.svn
 " 突出显示当前行等
 " set cursorcolumn
 set cursorline          " 突出显示当前行
-
+set cursorline
 
 "设置 退出vim后，内容显示在终端屏幕, 可以用于查看和复制
 "好处：误删什么的，如果以前屏幕打开，可以找回
@@ -590,7 +590,7 @@ function! AutoSetFileHead()
     "如果文件类型为python
     if &filetype == 'python'
         call setline(1, "\#!/usr/bin/env python")
-        call append(1, "\# encoding: utf-8")
+        call setline(2, "\# encoding: utf-8")
     endif
 
     normal G
@@ -664,7 +664,7 @@ highlight clear SpellLocal
 highlight SpellLocal term=underline cterm=underline
 
 set path+=/opt/3rd/boost/include
-set path+=/home/zhangzq/auto   
+set path+=/home/zhangzq/stockt0
 set path+=/usr/include
 set path+=/usr/local/include
 
@@ -702,14 +702,6 @@ function! AutoSetShFileHead()
     if &filetype == 'sh'
         call setline(1, "\#!/bin/bash")
     endif
-
-    "如果文件类型为python
-    if &filetype == 'python'
-        call setline(1, "\#!/usr/bin/env python")
-        call append(1, "\# encoding: utf-8")
-    endif
-
-
 endfunc
 
 function! AutoSetPyFileHead()
@@ -724,33 +716,15 @@ function! AutoSetPyFileHead()
     normal o
 endfunc
 
-function! AutoSetCFileHead()
-    if &filetype == 'h' || &filetype == "cpp" || &filetype == "c"
-        so ~/config/c_header.vim
-        exe "1,6g/File Name:.*/s//File Name: " .expand("%")
-        exe "1,6g/Creation Date:.*/s//Creation Date: " .strftime("%Y-%m-%d")
-
-        "如果文件类型为.h文件
-        if &filetype == 'h'
-            exe "1,9g/^#include.*/s//#pragma once/"
-        endif
-    endif
-
-    normal G
-    normal o
-    normal o
-endfunc
-
 autocmd BufNewFile *.sh exec ":call AutoSetShFileHead()"
 autocmd BufNewFile *.py exec ":call AutoSetPyFileHead()"
-autocmd BufNewFile *.c,*.cpp,*.h exec ":call AutoSetCFileHead()"
 
 
 function! AutoChangeModifiedTime()
     execute "normal ma"
-    exe "1,6g/@version.*/s/@version.*/@version " .strftime("%Y-%m-%d")
+    exe "1,10g/@version.*/s/@version.*/@version " .strftime("%Y-%m-%d")
     execute "normal `a"
     execute "normal ma"
 endfunc
 
-autocmd BufWritePre,FileWritePre,FileAppendPre *.c,*.h,*.cpp execute ":call AutoChangeModifiedTime()"
+autocmd BufWritePre,FileWritePre,FileAppendPre *.c,*.h,*.cpp,*.py execute ":call AutoChangeModifiedTime()"
