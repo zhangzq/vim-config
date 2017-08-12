@@ -253,6 +253,8 @@ set formatoptions+=B
 "==========================================
 autocmd! bufwritepost _vimrc source % " vimrc文件修改之后自动加载。 windows。
 autocmd! bufwritepost .vimrc source % " vimrc文件修改之后自动加载。 linux。
+autocmd! bufwritepost vimrc source % " vimrc文件修改之后自动加载。 linux。
+autocmd! bufwritepost vimrc.bundles source % " vimrc文件修改之后自动加载。 linux。
 
 " 自动补全配置
 "让Vim的补全菜单行为与一般IDE一致(参考VimTip1228)

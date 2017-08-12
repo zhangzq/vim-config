@@ -27,13 +27,9 @@ endif
 
 call plug#begin('~/.vim/bundle')
 
-Plug 'DoxygenToolkit.vim'
-Plug 'ericcurtin/CurtineIncSw.vim'
-nmap <F5> :call CurtineIncSw()<CR>
-imap <F5> <ESC>:call CurtineIncSw()<CR>
-
-
 " ################### 基础 ######################
+
+Plug 'DoxygenToolkit.vim'
 
 " 多语言语法检查
 Plug 'scrooloose/syntastic'
@@ -88,7 +84,7 @@ nnoremap <Leader>s :call ToggleErrors()<cr>
 " 代码自动补全
 "迄今为止用到的最好的自动VIM自动补全插件
 "重启 :YcmRestartServer
-Plug 'Valloric/YouCompleteMe'
+" Plug 'Vallori/YouCompleteMe'
 "youcompleteme  默认tab  s-tab 和自动补全冲突
 "let g:ycm_key_list_select_completion=['<c-n>']
 " let g:ycm_key_list_select_completion = ['<Down>']
@@ -108,7 +104,6 @@ let g:ycm_seed_identifiers_with_syntax=1   "语言关键字补全, 不过python�
 let g:ycm_goto_buffer_command = 'horizontal-split'
 " nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
-nnoremap <F12> :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>gd :YcmCompleter GoToDeclaration<CR>
 
 " 引入，可以补全系统，以及python的第三方包 针对新老版本YCM做了兼容
@@ -219,19 +214,12 @@ Plug 'tpope/vim-repeat'
 
 " 快速赋值语句对齐
 Plug 'junegunn/vim-easy-align'
-" nmap <Leader>a= vip:EasyAlign =<CR>
-" vmap <Leader>a= :EasyAlign =<CR>
-
-" nmap <Leader>a/ vip:EasyAlign /<CR>
-" vmap <Leader>a/ :EasyAlign /<CR>
-
-" nmap <Leader>a| vip:EasyAlign |<CR>
-" vmap <Leader>a| :EasyAlign |<CR>
-
 vmap <Leader>a <Plug>(EasyAlign)
 nmap <Leader>a <Plug>(EasyAlign)
-
-let g:easy_align_delimiters = {'/': { 'pattern':         '/\*\*<\|\*/', 'delimiter_align': 'l', 'ignore_groups':   [] }, }
+if !exists('g:easy_align_delimiters')
+  let g:easy_align_delimiters = {}
+endif
+let g:easy_align_delimiters['#'] = { 'pattern': '#', 'ignore_groups': ['String'] }
 
 " ################### 快速移动 ###################
 
@@ -568,3 +556,4 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'tpope/vim-unimpaired'
 
 call plug#end()  
+
