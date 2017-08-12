@@ -329,9 +329,6 @@ nmap <F7> :w<CR>:make -j<CR>
 imap <F7> <ESC>:w<CR>:make -j<CR>
 
 " set paste
-set pastetoggle=<F8>            "    when in insert mode, press <F5> to go to
-                                "    paste mode, where you can paste mass data
-                                "    that won't be autoindented
 " F12 jump to definition
 " defined in vimrc.bundles
 
@@ -561,25 +558,6 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 autocmd FileType c,h,cc,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
-
-" 定义函数AutoSetFileHead，自动插入文件头
-autocmd BufNewFile *.sh,*.py exec ":call AutoSetFileHead()"
-function! AutoSetFileHead()
-    "如果文件类型为.sh文件
-    if &filetype == 'sh'
-        call setline(1, "\#!/bin/bash")
-    endif
-
-    "如果文件类型为python
-    if &filetype == 'python'
-        call setline(1, "\#!/usr/bin/env python")
-        call setline(2, "\# encoding: utf-8")
-    endif
-
-    normal G
-    normal o
-    normal o
-endfunc
 
 
 " set some keyword to highlight
