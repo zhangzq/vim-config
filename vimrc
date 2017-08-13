@@ -309,12 +309,11 @@ nnoremap gj j
 " F6 语法开关，关闭语法可以加快大文件的展示
 
 " I can type :help on my own, thanks.  Protect your fat fingers from the evils of <F1>
-noremap <F1> <Esc>"
-
-map <F2> :bprevious<CR>
-imap <F2> <ESC>:bprevious<CR>
-map <F3> :bnext<CR>
-imap <F3> <ESC>:bnext<CR>
+noremap <F1> <Esc>
+map <F2> :w<CR>
+imap <F2> <ESC>:w<CR>i
+map <F3> :lnext<CR>
+imap <F3> <ESC>:lnext<CR>
 " F4 switch .h/.cpp
 " defined on vimrc.bundles
 
