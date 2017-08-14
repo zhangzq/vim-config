@@ -263,7 +263,7 @@ set completeopt=longest,menu
 " 增强模式中的命令行自动完成操作
 set wildmenu
 " Ignore compiled files
-set wildignore=*.o,*~,*.pyc,*.class
+set wildignore=*.o,*~,*.pyc,*.class,*.a
 
 "离开插入模式后自动关闭预览窗口
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
@@ -312,6 +312,8 @@ nnoremap gj j
 noremap <F1> <Esc>
 map <F2> :w<CR>
 imap <F2> <ESC>:w<CR>i
+map <C-F2> :x<CR>
+imap <C-F2> <ESC>:x<CR>i
 map <F3> :lnext<CR>
 imap <F3> <ESC>:lnext<CR>
 " F4 switch .h/.cpp
