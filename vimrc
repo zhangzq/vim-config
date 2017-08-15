@@ -311,10 +311,10 @@ nnoremap gj j
 " I can type :help on my own, thanks.  Protect your fat fingers from the evils of <F1>
 noremap <F1> <Esc>"
 
-map <F2> :bprevious<CR>
-imap <F2> <ESC>:bprevious<CR>
-map <F3> :bnext<CR>
-imap <F3> <ESC>:bnext<CR>
+map <F2> :w<CR>
+imap <F2> <ESC>:w<CR>i
+map <F3> :cn<CR>
+imap <F3> <ESC>:cn<CR>
 " F4 switch .h/.cpp
 " defined on vimrc.bundles
 
@@ -485,7 +485,7 @@ nnoremap <C-y> 2<C-y>
 "nmap t o<ESC>k
 "nmap T O<ESC>j
 
-nmap <leader>d A<TAB><TAB>/**<   */<ESC>Bhhi
+nmap <leader>d A<TAB><TAB>//!< @brief 
 inoremap <leader>d <ESC>:w<CR>:bd<CR>
 
 " Quickly close the current window
