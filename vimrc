@@ -490,8 +490,8 @@ nmap <leader>d A<TAB><TAB>/**<   */<ESC>Bhhi
 inoremap <leader>d <ESC>:w<CR>:bd<CR>
 
 " Quickly close the current window
-nnoremap <leader>q :q<CR>
-inoremap <leader>q <ESC>:q<CR>
+nnoremap <leader>q :w<CR>:bd<CR>
+inoremap <leader>q <ESC>:w<CR>:q<CR>
 
 " Quickly save the current file
 nnoremap <leader>w :w<CR>
