@@ -1,6 +1,6 @@
-# ln -s ~/config/k-vim.tmux.conf ~/.tmux.conf
-# ln -s ~/config/k-vim/.bashrc ~/.bashrc
-# ln -s ~/config/k-vim/.ycm_extra_conf.py ~/.ycm_extra_conf.py
+ln -s ~/config/k-vim/.tmux.conf ~/.tmux.conf
+ln -s ~/config/k-vim/.bashrc ~/.bashrc
+ln -s ~/config/k-vim/.ycm_extra_conf.py ~/.ycm_extra_conf.py
 cp molokai.vim bundle/molokai/colors/
 cp cpp.vim ./bundle/vim-cpp-enhanced-highlight/after/syntax/cpp.vim
 git config --global credential.helper store

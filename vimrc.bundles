@@ -29,8 +29,8 @@ call plug#begin('~/.vim/bundle')
 
 Plug 'DoxygenToolkit.vim'
 Plug 'ericcurtin/CurtineIncSw.vim'
-nmap <F5> :call CurtineIncSw()<CR>
-imap <F5> <ESC>:call CurtineIncSw()<CR>
+nmap <F4> :call CurtineIncSw()<CR>
+imap <F4> <ESC>:call CurtineIncSw()<CR>
 
 
 " ################### 基础 ######################
@@ -512,7 +512,7 @@ let g:molokai_original = 1
 " let g:pyflakes_use_quickfix = 1
 
 " for python.vim syntax highlight
-Plug 'hdima/python-syntax'
+Plug 'zhangzq/python-syntax'
 let g:python_highlight_all = 1
 let g:python_highlight_builtins = 1
 

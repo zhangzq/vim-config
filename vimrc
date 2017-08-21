@@ -19,6 +19,7 @@
 "       -> 插件配置和具体设置在vimrc.bundles中
 "==========================================
 
+
 "==========================================
 " Initial Plugin 加载插件
 "==========================================
@@ -264,6 +265,7 @@ set completeopt=longest,menu
 set wildmenu
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc,*.class,*.a
+" set paste
 
 "离开插入模式后自动关闭预览窗口
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
@@ -328,12 +330,14 @@ nnoremap <F7> :w<cr>:make -j<cr>
 nmap <F7> :w<CR>:make -j<CR>
 imap <F7> <ESC>:w<CR>:make -j<CR>
 
+set pastetoggle=<F12>
+
 " set paste
 " F12 jump to definition
 " defined in vimrc.bundles
 
 " disbale paste mode when leaving insert mode
-" au InsertLeave * set nopaste
+au InsertLeave * set nopaste
 
 " nnoremap <F6> :exec exists('syntax_on') ? 'syn off' : 'syn on'<CR>
 
@@ -681,13 +685,24 @@ autocmd BufNewFile *.sh exec ":call AutoSetShFileHead()"
 autocmd BufNewFile *.py exec ":call AutoSetPyFileHead()"
 
 
-function! AutoChangeModifiedTime()
-    execute "normal ma"
-    exe "1,10g/@version.*/s/@version.*/@version " .strftime("%Y-%m-%d")
-    execute "normal `a"
-    execute "normal ma"
-endfunc
+" function! AutoChangeModifiedTime()
+    " execute "normal ma"
+    " exe "1,10g/@version.*/s/@version.*/@version " .strftime("%Y-%m-%d")
+    " execute "normal `a"
+    " execute "normal ma"
+" endfunc
 
-autocmd BufWritePre,FileWritePre,FileAppendPre *.c,*.h,*.cpp,*.py execute ":call AutoChangeModifiedTime()"
+" autocmd BufWritePre,FileWritePre,FileAppendPre *.c,*.h,*.cpp,*.py execute ":call AutoChangeModifiedTime()"
 
+" function! AutoUpdateTheLastUpdateInfo()
+    " let s:original_pos = getpos(".")
+    " let s:regexp = "^s*([#"*]|//)s?[lL]ast_([uU]pdate|[cC]hange):"
+    " let s:lu = search(s:regexp)
+    " if s:lu != 0
+        " let s:update_str = matchstr(getline(s:lu), s:regexp)
+        " call setline(s:lu, s:update_str . strftime(" %c"))
+        " call setpos(".", s:original_pos)
+    " endif
+" endfunction
+" autocmd InsertLeave *.{py,c,js,css},*vimrc call AutoUpdateTheLastUpdateInfo()
 
