@@ -315,21 +315,27 @@ noremap <F1> <Esc>"
 
 map <F2> :w<CR>
 imap <F2> <ESC>:w<CR>i
-map <F3> :cn<CR>
-imap <F3> <ESC>:cn<CR>
+nnoremap <F3> :bd<CR>
+inoremap <F3> <CR>:bd<CR>
+
 " F4 switch .h/.cpp
 " defined on vimrc.bundles
 
 " ycm
 nmap <F5> :YcmDiags<Cr>
 imap <F5> <ESC>:YcmDiags<CR>i
-map <F6> :YcmCompleter FixIt<CR>
+map <F6> :lnext<CR>
+imap <F6> <ESC>:lnext<CR>
 
 " build using makeprg with <F7>
-nnoremap <F7> :w<cr>:make -j<cr>
-nmap <F7> :w<CR>:make -j<CR>
-imap <F7> <ESC>:w<CR>:make -j<CR>
+nnoremap <F7> :wa<CR>:make -j<cr>:cw<CR><CR>
+nmap <F7> :wa<CR>:make -j<CR>:cw<CR><CR>
+imap <F7> <ESC>:wa<CR>:make -j<CR><CR><CR>
+map <F8> :cn<CR>
+imap <F8> <ESC>:cn<CR>
 
+
+map <F11> :YcmCompleter FixIt<CR>
 set pastetoggle=<F12>
 
 " set paste
@@ -503,8 +509,6 @@ inoremap <leader>w <ESC>:w<CR>i
 nnoremap <leader>x :x<CR>
 inoremap <leader>x <ESC>:x<CR>
 
-nnoremap <leader>c :w<CR>:bd<CR>
-inoremap <leader>c <ESC>:w<CR>:bd<CR>
 
 
 

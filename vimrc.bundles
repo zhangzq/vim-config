@@ -231,7 +231,7 @@ Plug 'junegunn/vim-easy-align'
 vmap <Leader>a <Plug>(EasyAlign)
 nmap <Leader>a <Plug>(EasyAlign)
 
-let g:easy_align_delimiters = {'/': { 'pattern':         '/\*\*<\|\*/', 'delimiter_align': 'l', 'ignore_groups':   [] }, }
+let g:easy_align_delimiters = {'/': { 'pattern':         '/\*\*<\|\*/\|//!<', 'delimiter_align': 'l', 'ignore_groups':   [] }, }
 
 " ################### 快速移动 ###################
 
