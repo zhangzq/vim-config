@@ -1,9 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/zhangzq/room_future/py/gengwang_python_api/demo'
-let g:netrw_dirhist_2='/home/zhangzq/config/k-vim/bundle/vim-cpp-enhanced-highlight'
-let g:netrw_dirhist_3='/home/zhangzq/room_future/py/gengwang_python_api/demo'
-let g:netrw_dirhist_4='/home/zhangzq/stockt0/util'
-let g:netrw_dirhist_5='/home/zhangzq/website/static'
-let g:netrw_dirhist_6='/home/zhangzq/room_future/py'
-let g:netrw_dirhist_7='/home/zhangzq/room_future/hft-ui/.git'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/opt/auto-stable/lib'
+let g:netrw_dirhist_2='/home/zhangzq/stockt0/src/hft-modules'
+let g:netrw_dirhist_3='/opt/room-dev'
+let g:netrw_dirhist_4='/home/zhangzq/auto'
