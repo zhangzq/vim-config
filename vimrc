@@ -314,7 +314,7 @@ nnoremap gj j
 noremap <F1> <Esc>"
 
 map <F2> :w<CR>
-imap <F2> <ESC>:w<CR>i
+imap <F2> <ESC>:w<CR>
 nnoremap <F3> :bd<CR>
 inoremap <F3> <CR>:bd<CR>
 
@@ -483,7 +483,6 @@ cmap w!! w !sudo tee >/dev/null %
 
 " kj 替换 Esc
 inoremap jk <Esc>
-inoremap kj <Esc>
 
 " 滚动Speed up scrolling of the viewport slightly
 nnoremap <C-e> 2<C-e>

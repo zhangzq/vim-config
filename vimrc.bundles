@@ -27,21 +27,65 @@ endif
 
 call plug#begin('~/.vim/bundle')
 
+Plug 'kien/ctrlp.vim'
+
 Plug 'DoxygenToolkit.vim'
 Plug 'ericcurtin/CurtineIncSw.vim'
 nmap <F4> :call CurtineIncSw()<CR>
 imap <F4> <ESC>:call CurtineIncSw()<CR>
 
+" Plug 'nathanaelkane/vim-indent-guides'
+" let g:indent_guides_enable_on_vim_startup = 1
+
+Plug 'Yggdroot/indentLine'
 
 " ################### 基础 ######################
 
 " 多语言语法检查
-Plug 'scrooloose/syntastic'
+" Plug 'scrooloose/syntastic'
 let g:syntastic_error_symbol='>>'
 let g:syntastic_warning_symbol='>'
 let g:syntastic_check_on_open=1
 let g:syntastic_check_on_wq=0
 let g:syntastic_enable_highlighting=1
+
+Plug 'w0rp/ale'
+
+let g:ale_linters = {
+    \   'python': ['flake8'],
+    \   'javascript': ['eslint'],
+    \}
+
+let g:ale_python_flake8_args = " --ignore=E114,E116,E131,E401,E402,E501 --max-line-length=180"
+
+" let g:ale_sign_column_always = 1
+let g:ale_sign_error = '>>'
+let g:ale_sign_warning = '>'
+
+let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+" let g:ale_echo_msg_error_str = 'E'
+" let g:ale_echo_msg_warning_str = 'W'
+" let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
+nmap <silent> <Leader>ep <Plug>(ale_previous_wrap)
+nmap <silent> <Leader>en <Plug>(ale_next_wrap)
+
+nnoremap <silent> <Leader>ec :ALEToggle<CR>
+
+" troggle quickfix list
+function! ToggleErrors()
+    let old_last_winnr = winnr('$')
+    lclose
+    if old_last_winnr == winnr('$')
+        " Nothing was closed, open syntastic_error location panel
+        lopen
+    endif
+endfunction
+nnoremap <Leader>s :call ToggleErrors()<cr>
+
+let g:ale_set_highlights = 1
+highlight clear ALEErrorSign
+highlight clear ALEWarningSign
 
 " 最轻量
 " let g:syntastic_python_checkers=['pyflakes'] " 使用pyflakes
