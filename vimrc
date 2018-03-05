@@ -224,7 +224,7 @@ function! NumberToggle()
     set relativenumber
   endif
 endfunc
-nnoremap <C-n> :call NumberToggle()<cr>
+" nnoremap <C-n> :call NumberToggle()<cr>
 
 
 "==========================================
@@ -301,6 +301,7 @@ nnoremap k gk
 nnoremap gk k
 nnoremap j gj
 nnoremap gj j
+
 
 " F1 - F6 设置
 " F1 废弃这个键,防止调出系统帮助
@@ -635,7 +636,15 @@ set path+=/opt/3rd/boost/include
 set path+=/home/zhangzq/stockt0
 set path+=/usr/include
 set path+=/usr/local/include
-
+set path+=/usr/local/include/tensorflow
+set path+=/usr/local/include/tensorflow/tensorflow/contrib/makefile/gen/host_obj
+set path+=/usr/local/include/tensorflow/tensorflow/contrib/makefile/downloads
+set path+=/usr/local/include/tensorflow/tensorflow/contrib/makefile/downloads/eigen
+set path+=/usr/local/include/tensorflow/tensorflow/contrib/makefile/downloads/gemmlowp
+set path+=/usr/local/include/tensorflow/tensorflow/contrib/makefile/downloads/nsync/public
+set path+=/usr/local/include/tensorflow/tensorflow/contrib/makefile/gen/protobuf-host/include
+set path+=/usr/local/include/tensorflow/tensorflow/contrib/makefile/gen/proto
+set path+=/usr/local/include/tensorflow/tensorflow/contrib/makefile/gen/proto_text
 
 set colorcolumn=101
 execute "set colorcolumn=" . join(range(101,180), ',')
@@ -709,3 +718,5 @@ autocmd BufNewFile *.py exec ":call AutoSetPyFileHead()"
 " endfunction
 " autocmd InsertLeave *.{py,c,js,css},*vimrc call AutoUpdateTheLastUpdateInfo()
 
+
+map <leader>tt vip,a*\|

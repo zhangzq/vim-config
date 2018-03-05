@@ -27,6 +27,8 @@ endif
 
 call plug#begin('~/.vim/bundle')
 
+Plug 'terryma/vim-multiple-cursors'
+
 Plug 'kien/ctrlp.vim'
 
 Plug 'DoxygenToolkit.vim'

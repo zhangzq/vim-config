@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/home/zhangzq/room/models'
-let g:netrw_dirhist_2='/home/zhangzq/room/models/dnn_models'
-let g:netrw_dirhist_3='/home/zhangzq/room/private/tanggengt0'
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/data/stock/1min_bin/2016/12'
+let g:netrw_dirhist_2='/home/zhangzq/room/private/tanggengt0'
+let g:netrw_dirhist_3='/home/zhangzq/config/k-vim/bundle/molokai/colors'
+let g:netrw_dirhist_4='/home/zhangzq/auto/document/custom_theme'
+let g:netrw_dirhist_5='/home/zhangzq/auto/document/docs'
