@@ -614,7 +614,7 @@ set t_Co=256
 " colorscheme Tomorrow-Night
 " colorscheme Tomorrow-Night-Bright
 " colorscheme desert
-colorscheme molokai
+colorscheme gruvbox
 
 
 " 设置标记一列的背景颜色和数字一行颜色一致
@@ -632,8 +632,8 @@ highlight SpellRare term=underline cterm=underline
 highlight clear SpellLocal
 highlight SpellLocal term=underline cterm=underline
 
-set path+=/opt/3rd/boost/include
-set path+=/home/zhangzq/stockt0
+set path+=/opt/include
+set path+=/home/zhangzq/auto
 set path+=/usr/include
 set path+=/usr/local/include
 set path+=/usr/local/include/tensorflow
@@ -720,3 +720,7 @@ autocmd BufNewFile *.py exec ":call AutoSetPyFileHead()"
 
 
 map <leader>tt vip,a*\|
+
+set term=xterm-256color
+set t_ut=
+

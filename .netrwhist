@@ -1,7 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/data/stock/1min_bin/2016/12'
-let g:netrw_dirhist_2='/home/zhangzq/room/private/tanggengt0'
-let g:netrw_dirhist_3='/home/zhangzq/config/k-vim/bundle/molokai/colors'
-let g:netrw_dirhist_4='/home/zhangzq/auto/document/custom_theme'
-let g:netrw_dirhist_5='/home/zhangzq/auto/document/docs'
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/zhangzq/auto/document'
+let g:netrw_dirhist_2='/home/zhangzq/auto/document/custom_theme'
+let g:netrw_dirhist_3='/home/zhangzq/data/positions/trade_split'
+let g:netrw_dirhist_4='/home/zhangzq/auto/src/sim-intra-modules'
+let g:netrw_dirhist_5='/data/stock/pnlpool/TOP90P'
+let g:netrw_dirhist_6='/home/zhangzq/room/history_alphas'
+let g:netrw_dirhist_7='/data/stock/suspend'
+let g:netrw_dirhist_8='/home/zhangzq/auto/src/sim-intra-modules'
+let g:netrw_dirhist_9='/home/zhangzq/room/private/yuchao/pysrc/__pycache__'

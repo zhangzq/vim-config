@@ -31,7 +31,15 @@ Plug 'terryma/vim-multiple-cursors'
 
 Plug 'kien/ctrlp.vim'
 
+
 Plug 'DoxygenToolkit.vim'
+function! DoxygenPackage()
+  " exec "i <CR>package<CR>"
+  exec "normal! O##\<CR>#@package \<CR># "
+endfunction
+command! -nargs=0 DoxPackage :call DoxygenPackage()
+
+
 Plug 'ericcurtin/CurtineIncSw.vim'
 nmap <F4> :call CurtineIncSw()<CR>
 imap <F4> <ESC>:call CurtineIncSw()<CR>
@@ -44,14 +52,17 @@ Plug 'Yggdroot/indentLine'
 " ################### 基础 ######################
 
 " 多语言语法检查
-" Plug 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 let g:syntastic_error_symbol='>>'
 let g:syntastic_warning_symbol='>'
 let g:syntastic_check_on_open=1
 let g:syntastic_check_on_wq=0
 let g:syntastic_enable_highlighting=1
 
-Plug 'w0rp/ale'
+" Plug 'integralist/vim-mypy'
+
+
+" Plug 'w0rp/ale'
 
 let g:ale_linters = {
     \   'python': ['flake8'],
@@ -90,8 +101,6 @@ highlight clear ALEErrorSign
 highlight clear ALEWarningSign
 
 " 最轻量
-" let g:syntastic_python_checkers=['pyflakes'] " 使用pyflakes
-
 " 中等
 " error code: http://pep8.readthedocs.org/en/latest/intro.html#error-codes
 let g:syntastic_python_checkers=['pyflakes', 'pep8'] " 使用pyflakes,速度比pylint快
@@ -469,9 +478,10 @@ let g:rainbow_active = 1
 " let g:solarized_termcolors=256
 
 " 主题 molokai
-Plug 'tomasr/molokai'
-" monokai原始背景色
-let g:molokai_original = 1
+" Plug 'tomasr/molokai'
+" " monokai原始背景色
+" let g:molokai_original = 1
+Plug 'morhetz/gruvbox'
 
 " 主题 tomorrow
 " Plug 'chriskempson/vim-tomorrow-theme'
@@ -564,7 +574,7 @@ let g:python_highlight_builtins = 1
 
 
 " ###### Markdown #########
-Plug 'plasticboy/vim-markdown'
+" Plug 'plasticboy/vim-markdown'
 let g:vim_markdown_folding_disabled=1
 
 " https://github.com/suan/vim-instant-markdown
