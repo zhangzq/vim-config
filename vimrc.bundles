@@ -69,7 +69,7 @@ let g:ale_linters = {
     \   'javascript': ['eslint'],
     \}
 
-let g:ale_python_flake8_args = " --ignore=E114,E116,E131,E401,E402,E501 --max-line-length=180"
+let g:ale_python_flake8_args = " --ignore=E266,E114,E116,E131,E401,E402,E501 --max-line-length=180"
 
 " let g:ale_sign_column_always = 1
 let g:ale_sign_error = '>>'
@@ -104,7 +104,7 @@ highlight clear ALEWarningSign
 " 中等
 " error code: http://pep8.readthedocs.org/en/latest/intro.html#error-codes
 let g:syntastic_python_checkers=['pyflakes', 'pep8'] " 使用pyflakes,速度比pylint快
-let g:syntastic_python_pep8_args='--ignore=E401,E402,E501'
+let g:syntastic_python_pep8_args='--ignore=E266,E401,E402,E501'
 "--ignore=E501,E225,E124,E712'
 
 " 重量级, 但是足够强大, 定制完成后相当个性化
