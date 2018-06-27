@@ -27,6 +27,9 @@ endif
 
 call plug#begin('~/.vim/bundle')
 
+
+Plug 'mechatroner/rainbow_csv'
+
 Plug 'terryma/vim-multiple-cursors'
 
 Plug 'kien/ctrlp.vim'

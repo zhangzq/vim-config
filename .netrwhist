@@ -1,8 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/opt/auto-stable/autopy/util'
-let g:netrw_dirhist_2='/home/zhangzq/auto/autopy/util'
-let g:netrw_dirhist_3='/home/zhangzq/room/private/yuchao'
-let g:netrw_dirhist_4='/home/zhangzq/room/web/api'
-let g:netrw_dirhist_5='/home/zhangzq/auto/autopy/autobase'
-let g:netrw_dirhist_6='/home/zhangzq/room/private/wangce'
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/data/hk_stock/hk_quote/2018/06'
+let g:netrw_dirhist_2='/data/hk_stock'
+let g:netrw_dirhist_3='/data/hk_stock/hk_quote'
+let g:netrw_dirhist_4='/data/hk_stock/hk_quote/2018'
+let g:netrw_dirhist_5='/data/hk_stock/hk_quote/2018/06'
