@@ -1,29 +1,3 @@
-"==========================================
-" Author:  wklken
-" Version: 9.0
-" Email: wklken@yeah.net
-" BlogPost: http://www.wklken.me
-" ReadMe: README.md
-" Donation: http://www.wklken.me/pages/donation.html
-" Last_modify: 2015-05-02
-" Sections:
-"       -> Initial Plugin 加载插件
-"       -> General Settings 基础设置
-"       -> Display Settings 展示/排版等界面格式设置
-"       -> FileEncode Settings 文件编码设置
-"       -> Others 其它配置
-"       -> HotKey Settings  自定义快捷键
-"       -> FileType Settings  针对文件类型的设置
-"       -> Theme Settings  主题设置
-"
-"       -> 插件配置和具体设置在vimrc.bundles中
-"==========================================
-
-
-"==========================================
-" Initial Plugin 加载插件
-"==========================================
-
 " 修改leader键
 let mapleader = ','
 let g:mapleader = ','
@@ -31,22 +5,10 @@ let g:mapleader = ','
 " 开启语法高亮
 syntax on
 
-
-" install Vundle bundles
+" 导入插件
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
-
-" ensure ftdetect et al work by including this after the Vundle stuff
-filetype plugin indent on
-
-"==========================================
-" General Settings 基础设置
-"==========================================
-
-"以下配置有详细说明，一些特性不喜欢可以直接注解掉
-
-"set guifont=Monaco:h20          " 字体 && 字号
 
 " history存储容量
 set history=2000
@@ -63,34 +25,17 @@ filetype plugin indent on
 set autoread          " 文件修改之后自动载入。
 set shortmess=atI       " 启动的时候不显示那个援助索马里儿童的提示
 
-" 备份,到另一个位置. 防止误删, 目前是取消备份
-"set backup
-"set backupext=.bak
-"set backupdir=/tmp/vimbk/
-
 " 取消备份。 视情况自己改
 set nobackup
 " 关闭交换文件
 set noswapfile
 
-
-"create undo file
-" if has('persistent_undo')
-  " set undolevels=1000         " How many undos
-  " set undoreload=10000        " number of lines to save for undo
-  " set undofile                " So is persistent undo ...
-  " set undodir=/tmp/vimundo/
-" endif
-
 set wildignore=*.swp,*.bak,*.pyc,*.class,.svn
-" 突出显示当前行等
-" set cursorcolumn
-set cursorline          " 突出显示当前行
-set cursorline
 
-"设置 退出vim后，内容显示在终端屏幕, 可以用于查看和复制
-"好处：误删什么的，如果以前屏幕打开，可以找回
-" set t_ti= t_te=
+" 不突出显示当前列
+" set cursorcolumn
+" 突出显示当前行等
+set cursorline          
 
 
 "- 则点击光标不会换,用于复制
@@ -159,9 +104,9 @@ set hlsearch
 " 打开增量搜索模式,随着键入即时搜索
 set incsearch
 " 搜索时忽略大小写
-" set ignorecase
+set ignorecase
 " 有一个或以上大写字母时仍大小写敏感
-" set smartcase     " ignore case if search pattern is all lowercase, case-sensitive otherwise
+set smartcase     
 
 " 代码折叠
 set foldenable
@@ -191,9 +136,6 @@ endfun
 
 set smartindent   " Smart indent
 set autoindent    " 打开自动缩进
-" never add copyindent, case error   " copy the previous indentation on autoindenting
-
-" tab相关变更
 set tabstop=4     " 设置Tab键的宽度        [等同的空格个数]
 set shiftwidth=4  " 每一次缩进对应的空格数
 set softtabstop=4 " 按退格键时可以一次删掉 4 个空格
@@ -614,7 +556,7 @@ set t_Co=256
 " colorscheme Tomorrow-Night
 " colorscheme Tomorrow-Night-Bright
 " colorscheme desert
-colorscheme molokai
+colorscheme gruvbox
 
 
 " 设置标记一列的背景颜色和数字一行颜色一致
@@ -632,8 +574,8 @@ highlight SpellRare term=underline cterm=underline
 highlight clear SpellLocal
 highlight SpellLocal term=underline cterm=underline
 
-set path+=/opt/3rd/boost/include
-set path+=/home/zhangzq/stockt0
+set path+=/opt/include
+set path+=/home/zhangzq/auto
 set path+=/usr/include
 set path+=/usr/local/include
 set path+=/usr/local/include/tensorflow
@@ -696,28 +638,15 @@ endfunc
 autocmd BufNewFile *.sh exec ":call AutoSetShFileHead()"
 autocmd BufNewFile *.py exec ":call AutoSetPyFileHead()"
 
-
-" function! AutoChangeModifiedTime()
-    " execute "normal ma"
-    " exe "1,10g/@version.*/s/@version.*/@version " .strftime("%Y-%m-%d")
-    " execute "normal `a"
-    " execute "normal ma"
-" endfunc
-
-" autocmd BufWritePre,FileWritePre,FileAppendPre *.c,*.h,*.cpp,*.py execute ":call AutoChangeModifiedTime()"
-
-" function! AutoUpdateTheLastUpdateInfo()
-    " let s:original_pos = getpos(".")
-    " let s:regexp = "^s*([#"*]|//)s?[lL]ast_([uU]pdate|[cC]hange):"
-    " let s:lu = search(s:regexp)
-    " if s:lu != 0
-        " let s:update_str = matchstr(getline(s:lu), s:regexp)
-        " call setline(s:lu, s:update_str . strftime(" %c"))
-        " call setpos(".", s:original_pos)
-    " endif
-" endfunction
-" autocmd InsertLeave *.{py,c,js,css},*vimrc call AutoUpdateTheLastUpdateInfo()
-
-
 map <leader>tt vip,a*\|
 map <leader>t/ vip,a*\/
+
+vmap <leader>tt ,a*\|
+vmap <leader>t/ ,a*\/
+
+set term=xterm-256color
+set t_ut=
+
+" python code format
+" 输入,ya 便可以格式化整个python文件，调用yapf
+autocmd FileType python nnoremap <leader>ya :0,$!yapf<Cr>
