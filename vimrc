@@ -720,3 +720,4 @@ autocmd BufNewFile *.py exec ":call AutoSetPyFileHead()"
 
 
 map <leader>tt vip,a*\|
+map <leader>t/ vip,a*\/
