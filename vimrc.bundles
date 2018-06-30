@@ -276,7 +276,9 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 " [e ]e 当前行上移或下移
 " [SPACE  ]SPACE  当前行上面或下面增加空行
 " [f ]f 打开同目录下上/下一个文件
-"
 Plug 'tpope/vim-unimpaired'
+
+" 调换函数参数或列表项
+Plug 'AndrewRadev/sideways.vim'
 
 call plug#end()  
