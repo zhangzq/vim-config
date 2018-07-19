@@ -393,9 +393,9 @@ let g:last_active_tab = 1
 " nnoremap <leader>gt :execute 'tabnext ' . g:last_active_tab<cr>
 " nnoremap <silent> <c-o> :execute 'tabnext ' . g:last_active_tab<cr>
 " vnoremap <silent> <c-o> :execute 'tabnext ' . g:last_active_tab<cr>
-nnoremap <silent> <leader>tt :execute 'tabnext ' . g:last_active_tab<cr>
-vnoremap <silent> <leader>tt :execute 'tabnext ' . g:last_active_tab<cr>
-autocmd TabLeave * let g:last_active_tab = tabpagenr()
+" nnoremap <silent> <leader>tt :execute 'tabnext ' . g:last_active_tab<cr>
+" vnoremap <silent> <leader>tt :execute 'tabnext ' . g:last_active_tab<cr>
+" autocmd TabLeave * let g:last_active_tab = tabpagenr()
 
 
 " ------- 选中及操作改键

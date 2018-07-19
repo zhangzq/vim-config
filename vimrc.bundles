@@ -31,6 +31,16 @@ Plug 'terryma/vim-multiple-cursors'
 
 " 快速搜索文件打开。有个这个之后 :e 不用输入文件路径和全名了。
 Plug 'kien/ctrlp.vim'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.d,*.o,*.bin,*.a,*.lib     " MacOSX/Linux
+
+Plug 'Yggdroot/LeaderF', { 'do': './install.sh'  }
+
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll|a|o|bin|lib|swp|d)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
 
 " 提供一系列doxgen的功能
 " :Dox 添加Dox注释
@@ -189,8 +199,8 @@ Plug 'tpope/vim-repeat'
 " vmap <Leader>a/ :EasyAlign /<CR>
 " nmap <Leader>a| vip:EasyAlign |<CR>
 " vmap <Leader>a| :EasyAlign |<CR>
-" vmap <Leader>a <Plug>(EasyAlign)
-" nmap <Leader>a vip<Plug>(EasyAlign)
+vmap <Leader>a <Plug>(EasyAlign)
+nmap <Leader>a vip<Plug>(EasyAlign)
 Plug 'junegunn/vim-easy-align'
 let g:easy_align_delimiters = {'/': { 'pattern':         '/\*\*<\|\*/\|//!<', 'delimiter_align': 'l', 'ignore_groups':   [] }, }
 
@@ -283,4 +293,3 @@ Plug 'AndrewRadev/sideways.vim'
 Plug 'jiangmiao/auto-pairs'
 
 call plug#end()  
-
