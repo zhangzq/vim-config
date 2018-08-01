@@ -644,7 +644,7 @@ map <leader>t/ vip,a*\/
 vmap <leader>tt ,a*\|
 vmap <leader>t/ ,a*\/
 
-set term=xterm-256color
+" set term=xterm-256color
 set t_ut=
 
 " python code format
