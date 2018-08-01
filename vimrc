@@ -271,9 +271,6 @@ map <F6> :lnext<CR>
 imap <F6> <ESC>:lnext<CR>
 
 " build using makeprg with <F7>
-nnoremap <F7> :wa<CR>:make -j<cr>:cw<CR><CR>
-nmap <F7> :wa<CR>:make -j<CR>:cw<CR><CR>
-imap <F7> <ESC>:wa<CR>:make -j<CR><CR><CR>
 map <F8> :cn<CR>
 imap <F8> <ESC>:cn<CR>
 
@@ -575,7 +572,7 @@ highlight clear SpellLocal
 highlight SpellLocal term=underline cterm=underline
 
 set path+=/opt/include
-set path+=/home/zhangzq/auto
+set path+=~/auto
 set path+=/usr/include
 set path+=/usr/local/include
 set path+=/usr/local/include/tensorflow

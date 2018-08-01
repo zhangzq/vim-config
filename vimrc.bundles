@@ -113,8 +113,23 @@ nnoremap <Leader>s :call ToggleErrors()<cr>
 
 
 Plug 'w0rp/ale' 
-let g:ale_linters = {    'c++': ['clang'],    'c': ['clang'],    'python': ['pylint'], }
+let g:ale_linters = {    'c++': ['clang', 'cppcheck'],    'c': ['clang'],    'python': ['pylint'], }
 
+let g:ale_linters_explicit = 1
+let g:ale_completion_delay = 500
+let g:ale_echo_delay = 20
+let g:ale_lint_delay = 500
+let g:ale_echo_msg_format = '[%linter%] %code: %%s'
+let g:ale_lint_on_text_changed = 'normal'
+let g:ale_lint_on_insert_leave = 1
+let g:airline#extensions#ale#enabled = 1
+
+let g:ale_python_pylint_options = '-d missing-docstring'
+
+let g:ale_c_gcc_options = '-Wall -O2 -std=c99'
+let g:ale_cpp_gcc_options = '-Wall -O2 -std=c++14'
+let g:ale_c_cppcheck_options = ''
+let g:ale_cpp_cppcheck_options = ''
 
 " let g:ale_sign_column_always = 1
 " let g:ale_set_highlights = 0
@@ -145,7 +160,6 @@ Plug 'Valloric/YouCompleteMe'
 "let g:ycm_key_list_select_completion=['<c-n>']
 " let g:ycm_key_list_select_completion = ['<Down>']
 let g:ycm_key_list_select_completion = ['<tab>']
-"let g:ycm_key_list_previous_completion=['<c-p>']
 let g:ycm_key_list_previous_completion = ['<Up>']
 let g:ycm_complete_in_comments = 1  "在注释输入中也能补全
 let g:ycm_complete_in_strings = 1   "在字符串输入中也能补全
@@ -165,7 +179,7 @@ nnoremap <leader>gd :YcmCompleter GoToDeclaration<CR>
 
 " 引入，可以补全系统，以及python的第三方包 针对新老版本YCM做了兼容
 " old version
-let g:ycm_global_ycm_extra_conf = "/home/zhangzq/.ycm_extra_conf.py"
+let g:ycm_global_ycm_extra_conf = "~/.ycm_extra_conf.py"
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_always_populate_location_list = 1
 
@@ -301,8 +315,8 @@ Plug 'tpope/vim-unimpaired'
 " 调换函数参数或列表项
 Plug 'AndrewRadev/sideways.vim'
 
-" set noshowmode
-" Plug 'Shougo/echodoc.vim'
+set noshowmode
+Plug 'Shougo/echodoc.vim'
 
 " 号称可以解决函数参数自动提示的功能
 " set noshowmode
@@ -320,5 +334,26 @@ Plug 'AndrewRadev/sideways.vim'
 
 " 自动括号
 Plug 'jiangmiao/auto-pairs'
+
+
+" 打开命令行面板
+" 可以使用命令 :AsyncRun make -j 异步执行命令。
+Plug 'skywind3000/asyncrun.vim'
+
+" 自动打开 quickfix window ，高度为 6
+let g:asyncrun_open = 6
+" 任务结束时候响铃提醒
+let g:asyncrun_bell = 1
+" 设置 F10 打开/关闭 Quickfix 窗口
+nnoremap <F10> :call asyncrun#quickfix_toggle(6)<cr>
+nnoremap <F7> :wa<CR>:AsyncRun make -j<cr>:cw<CR><CR>
+nmap <F7> :wa<CR>:AsyncRun make -j<CR>:cw<CR><CR>
+imap <F7> <ESC>:wa<CR>:AsyncRun make -j<CR><CR><CR>
+
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-indent'
+Plug 'kana/vim-textobj-syntax'
+Plug 'kana/vim-textobj-function', { 'for':['c', 'cpp', 'vim', 'java'] }
+Plug 'sgur/vim-textobj-parameter'
 
 call plug#end()  
