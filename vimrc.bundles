@@ -113,7 +113,7 @@ nnoremap <Leader>s :call ToggleErrors()<cr>
 
 
 Plug 'w0rp/ale' 
-let g:ale_linters = {    'c++': ['clang', 'cppcheck'],    'c': ['clang'],    'python': ['pylint'], }
+let g:ale_linters = {    'cpp': ['clang', 'cppcheck'],    'c': ['clang', 'cppcheck'],    'python': ['pylint'], }
 
 let g:ale_linters_explicit = 1
 let g:ale_completion_delay = 500
@@ -124,12 +124,18 @@ let g:ale_lint_on_text_changed = 'normal'
 let g:ale_lint_on_insert_leave = 1
 let g:airline#extensions#ale#enabled = 1
 
-let g:ale_python_pylint_options = '-d missing-docstring'
+let g:ale_python_pylint_options = '-d missing-docstring,too-many-return-statements'
 
-let g:ale_c_gcc_options = '-Wall -O2 -std=c99'
-let g:ale_cpp_gcc_options = '-Wall -O2 -std=c++14'
+let g:ale_c_gcc_options = '-Wall -O0 -std=c99'
+let g:ale_cpp_gcc_options = '-Wall -O0 -std=c++14'
+
+let g:ale_c_clang_options = '-Wall -O0 -std=c99'
+let g:ale_cpp_clang_options = '-Wall -O0 -std=c++14'
+
 let g:ale_c_cppcheck_options = ''
 let g:ale_cpp_cppcheck_options = ''
+
+let g:ale_fixers = { 'javascript': ['eslint'], 'python': ['autopep8'] }
 
 " let g:ale_sign_column_always = 1
 " let g:ale_set_highlights = 0
@@ -279,8 +285,6 @@ let g:airline_right_sep = '◀'
 let g:airline_right_alt_sep = '❮'
 let g:airline_symbols.linenr = '¶'
 let g:airline_symbols.branch = '⎇'
-" 是否打开tabline
-" let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#loclist#enabled = 1
 
