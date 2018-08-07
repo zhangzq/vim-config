@@ -80,7 +80,7 @@ let g:syntastic_enable_highlighting=1
 " let g:syntastic_python_checkers=['pep8'] " 使用pyflakes,速度比pylint快
 " let g:syntastic_python_checkers=['pyflakes', 'pep8'] " 使用pyflakes,速度比pylint快
 let g:syntastic_python_checkers=['pylint'] " 使用pyflakes,速度比pylint快
-let g:syntastic_python_pylint_args='-d E266,E401,E402,E501,missing-docstring'
+let g:syntastic_python_pylint_args='-d E266,E401,E402,E501,missing-docstring,no-else-return'
 let g:syntastic_python_pep8_args='--ignore=E266,E401,E402,E501'
 "--ignore=E501,E225,E124,E712'
 
@@ -113,7 +113,7 @@ nnoremap <Leader>s :call ToggleErrors()<cr>
 
 
 Plug 'w0rp/ale' 
-let g:ale_linters = {    'cpp': ['clang', 'cppcheck'],    'c': ['clang', 'cppcheck'],    'python': ['pylint'], }
+let g:ale_linters = {    'cpp': ['gcc', 'cppcheck'],    'c': ['cppcheck', 'gcc'],    'python': ['pylint'], }
 
 let g:ale_linters_explicit = 1
 let g:ale_completion_delay = 500
@@ -124,16 +124,13 @@ let g:ale_lint_on_text_changed = 'normal'
 let g:ale_lint_on_insert_leave = 1
 let g:airline#extensions#ale#enabled = 1
 
-let g:ale_python_pylint_options = '-d missing-docstring,too-many-return-statements'
+let g:ale_python_pylint_options = '-d missing-docstring,too-many-return-statements,no-else-return --good-names=df,e,idx,np,a,b,c,d,x,y,z,i,j,k,m,n --extension-pkg-whitelist=lxml'
 
-let g:ale_c_gcc_options = '-Wall -O0 -std=c99'
-let g:ale_cpp_gcc_options = '-Wall -O0 -std=c++14'
+let g:ale_c_gcc_options = '-Wall -O0 -std=c99 -I ~/auto -isystem /opt/include'
+let g:ale_cpp_gcc_options = '-Wall -O0 -std=c++14 -I ~/auto -isystem /opt/include'
 
-let g:ale_c_clang_options = '-Wall -O0 -std=c99'
-let g:ale_cpp_clang_options = '-Wall -O0 -std=c++14'
-
-let g:ale_c_cppcheck_options = ''
-let g:ale_cpp_cppcheck_options = ''
+let g:ale_c_clang_options = '-Wall -O0 -std=c99 -I ~/auto -I /opt/include'
+let g:ale_cpp_clang_options = '-Wall -O0 -std=c++14 -I ~/auto -isystem /opt/include'
 
 let g:ale_fixers = { 'javascript': ['eslint'], 'python': ['autopep8'] }
 
