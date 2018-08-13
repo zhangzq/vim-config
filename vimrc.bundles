@@ -124,15 +124,19 @@ let g:ale_lint_on_text_changed = 'normal'
 let g:ale_lint_on_insert_leave = 1
 let g:airline#extensions#ale#enabled = 1
 
-let g:ale_python_pylint_options = '-d missing-docstring,too-many-return-statements,no-else-return --good-names=df,e,idx,np,a,b,c,d,x,y,z,i,j,k,m,n --extension-pkg-whitelist=lxml'
+let g:ale_python_pylint_options = '-d broad-except,missing-docstring,too-many-return-statements,no-else-return --good-names=rt,df,e,idx,np,a,b,c,d,x,y,z,i,j,k,m,n,g,t,v,o,pt,ot,tt,p,s,di,to,ii,ti,dl,t,Log,log,Math,Stockt0 --extension-pkg-whitelist=lxml --min-public-methods=1 --max-public-methods=30'
 
 let g:ale_c_gcc_options = '-Wall -O0 -std=c99 -I ~/auto -isystem /opt/include'
-let g:ale_cpp_gcc_options = '-Wall -O0 -std=c++14 -I ~/auto -isystem /opt/include'
+let g:ale_cpp_gcc_options = '-Wall -O0 -std=c++14 -I ~/auto -isystem /opt/include -isystem /usr/include/python3.5/ -isystem /usr/local/lib/python3.5/dist-packages/numpy/core/include/' 
 
 let g:ale_c_clang_options = '-Wall -O0 -std=c99 -I ~/auto -I /opt/include'
 let g:ale_cpp_clang_options = '-Wall -O0 -std=c++14 -I ~/auto -isystem /opt/include'
 
+let g:ale_cpp_cppcheck_options = '-Wall -O0 -std=c++14 -I ~/auto -isystem /opt/include -isystem /usr/include/python3.5/ -isystem /usr/local/lib/python3.5/dist-packages/numpy/core/include/' 
+
+
 let g:ale_fixers = { 'javascript': ['eslint'], 'python': ['autopep8'] }
+
 
 " let g:ale_sign_column_always = 1
 " let g:ale_set_highlights = 0
