@@ -304,7 +304,7 @@ let g:python_highlight_builtins = 1
 
 
 " C++文件高亮，可以识别函数名、类名等。根据语法识别，不太准确。
-Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'zhangzq/vim-cpp-enhanced-highlight'
 " let g:cpp_class_scope_highlight = 1
 " let g:cpp_experimental_template_highlight = 1
 "
