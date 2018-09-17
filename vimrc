@@ -434,7 +434,6 @@ nnoremap <C-y> 2<C-y>
 "nmap t o<ESC>k
 "nmap T O<ESC>j
 
-nmap <leader>d A<TAB><TAB>//!< @brief 
 inoremap <leader>d <ESC>:w<CR>:bd<CR>
 
 " Quickly close the current window
