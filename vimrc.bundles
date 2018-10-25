@@ -52,6 +52,8 @@ function! DoxygenPackage()
   exec "normal! O##\<CR>#@package \<CR># "
 endfunction
 command! -nargs=0 DoxPackage :call DoxygenPackage()
+let g:doxygenToolkit_authorName="zhiqiang"
+let g:doxygenToolkit_briefTag_funcName="yes"
 nmap <leader>df :Dox<CR>
 nmap <leader>dm A<TAB><TAB>//!< 
 nmap <leader>ds A @snippetdoc snippet/auto.txt 
@@ -133,7 +135,6 @@ let g:ale_lint_on_insert_leave = 1
 let g:airline#extensions#ale#enabled = 1
 
 let g:ale_python_pylint_options = '-d broad-except,missing-docstring,too-many-return-statements,no-else-return --good-names=ip,id,idx,today,rt,df,e,idx,np,a,b,c,d,x,y,z,i,j,k,m,n,g,t,v,o,pt,ot,tt,p,s,di,to,ii,ti,dl,t,Log,log,Math,Stockt0 --extension-pkg-whitelist=lxml --min-public-methods=1 --max-public-methods=30'
-
 let g:ale_c_gcc_options = '-Wall -O0 -std=c99 -I ~/auto -isystem /opt/include'
 let g:ale_cpp_gcc_options = '-Wall -O0 -std=c++14 -I ~/auto -isystem /opt/include -isystem /usr/include/python3.5/ -isystem /usr/local/lib/python3.5/dist-packages/numpy/core/include/' 
 
