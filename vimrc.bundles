@@ -46,7 +46,7 @@ let g:ctrlp_custom_ignore = {
 " :Dox 添加Dox注释
 " :DoxAuthor 添加Dox文件和作者信息
 " ,d 为当前变量后面创建行内文档
-Plug 'DoxygenToolkit.vim'
+Plug 'vim-scripts/DoxygenToolkit.vim'
 function! DoxygenPackage()
   " exec "i <CR>package<CR>"
   exec "normal! O##\<CR>#@package \<CR># "
@@ -125,7 +125,7 @@ nnoremap <Leader>s :call ToggleErrors()<cr>
 Plug 'w0rp/ale' 
 let g:ale_linters = {'cpp': ['gcc', 'cppcheck'], 'c': ['cppcheck', 'gcc'], 'python': ['pylint'], }
 let g:ale_fixers = { 'javascript': ['eslint'], 'python': ['autopep8'] }
-let g:ale_python_pylint_options = '-d broad-except,missing-docstring,too-many-return-statements,no-else-return --good-names=id,idx,today,rt,df,e,idx,np,a,b,c,d,x,y,z,i,j,k,m,n,g,t,v,o,pt,ot,tt,p,s,di,to,ii,ti,dl,t,Log,log,Math,Stockt0 --extension-pkg-whitelist=lxml --min-public-methods=1 --max-public-methods=30'
+let g:ale_python_pylint_options = '-d broad-except,missing-docstring,too-many-return-statements,no-else-return --good-names=ir,ic,ip,id,idx,today,rt,df,e,idx,np,a,b,c,d,x,y,z,i,j,k,m,n,g,t,v,o,pt,ot,tt,p,s,di,to,ii,ti,dl,t,Log,log,Math,Stockt0,mm,dd,yyyy--extension-pkg-whitelist=lxml --min-public-methods=1 --max-public-methods=30'
 let g:ale_c_gcc_options = '-Wall -O0 -std=c99 -I ~/auto -isystem /opt/include'
 let g:ale_cpp_gcc_options = '-Wall -O0 -std=c++14 -I ~/auto -isystem /opt/include -isystem /usr/include/python3.5/ -isystem /usr/local/lib/python3.5/dist-packages/numpy/core/include/ -isystem /opt/3rd/wind/include -isystem /usr/local/lib/python3.5/dist-packages/numpy/core/include/' 
 let g:ale_c_clang_options = '-Wall -O0 -std=c99 -I ~/auto -I /opt/include -isystem /usr/local/lib/python3.5/dist-packages/numpy/core/include/ '
@@ -141,6 +141,8 @@ let g:ale_lint_on_text_changed = 'normal'
 let g:ale_lint_on_insert_leave = 1
 let g:airline#extensions#ale#enabled = 1
 
+let g:ale_c_gcc_options = '-Wall -O0 -std=c99 -I ~/auto -I /opt/include'
+let g:ale_cpp_gcc_options = '-Wall -O0 -std=c++14 -I ~/auto -isystem /opt/include -isystem /usr/include/python3.5/ -isystem /usr/local/lib/python3.5/dist-packages/numpy/core/include/' 
 
 
 
@@ -156,8 +158,6 @@ let g:airline#extensions#ale#enabled = 1
 " let g:ale_echo_msg_warning_str = 'W'
 " let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 "普通模式下，sp前往上一个错误或警告，sn前往下一个错误或警告
-" nmap sp <Plug>(ale_previous_wrap)
-" nmap sn <Plug>(ale_next_wrap)
 "<Leader>s触发/关闭语法检查
 " nmap <Leader>s :ALEToggle<CR>
 " "<Leader>d查看错误或警告的详细信息
