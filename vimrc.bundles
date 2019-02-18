@@ -73,7 +73,7 @@ imap <F4> <ESC>:call CurtineIncSw()<CR>
 " let g:indent_guides_enable_on_vim_startup = 1
 
 " 给缩进显示颜色，会显示灰色的竖线
-Plug 'Yggdroot/indentLine'
+" Plug 'Yggdroot/indentLine'
 
 
 " 多语言语法检查
@@ -217,9 +217,6 @@ let g:ycm_filetype_blacklist = {
 " imap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
 
 
-" 自动补全html/xml标签
-Plug 'docunext/closetag.vim'
-let g:closetag_html_style=1
 
 
 " 快速注释
@@ -243,7 +240,7 @@ let g:NERDSpaceDelims=1
 " cs"'修改环绕字符"为'
 " ysW( 选中当前大单词增加括号
 " yss"整行添加"
-Plug 'tpope/vim-surround'
+" Plug 'tpope/vim-surround'
 
 " for repeat -> enhance surround.vim, . to repeat command
 Plug 'tpope/vim-repeat'

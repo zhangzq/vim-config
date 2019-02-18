@@ -1,3 +1,5 @@
+" 自定义设置请放在 ~/.vimrc.customize 文件里，配置将在最后自动导入。
+
 " 修改leader键
 let mapleader = ','
 let g:mapleader = ','
@@ -647,3 +649,13 @@ set t_ut=
 " python code format
 " 输入,ya 便可以格式化整个python文件，调用yapf
 autocmd FileType python nnoremap <leader>ya :0,$!yapf<Cr>
+
+set conceallevel=0
+set concealcursor=ni
+
+" 导入自定义设置
+if filereadable(expand("~/.vimrc.cusomize"))
+  source ~/.vimrc.cusomize
+endif
+
+
