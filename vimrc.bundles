@@ -73,7 +73,7 @@ imap <F4> <ESC>:call CurtineIncSw()<CR>
 " let g:indent_guides_enable_on_vim_startup = 1
 
 " 给缩进显示颜色，会显示灰色的竖线
-Plug 'Yggdroot/indentLine'
+" Plug 'Yggdroot/indentLine'
 
 
 " 多语言语法检查
