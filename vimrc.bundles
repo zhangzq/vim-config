@@ -341,7 +341,7 @@ Plug 'Shougo/echodoc.vim'
 
 
 " 自动括号
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
 
 
 " 打开命令行面板

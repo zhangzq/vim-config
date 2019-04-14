@@ -658,4 +658,6 @@ if filereadable(expand("~/.vimrc.cusomize"))
   source ~/.vimrc.cusomize
 endif
 
+set lazyredraw
+set ttyfast
 
