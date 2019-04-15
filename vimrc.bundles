@@ -125,7 +125,7 @@ nnoremap <Leader>s :call ToggleErrors()<cr>
 Plug 'w0rp/ale' 
 let g:ale_linters = {'cpp': [], 'c': [], 'python': ['pylint'], }
 let g:ale_fixers = { 'javascript': ['eslint'], 'python': ['autopep8'] }
-let g:ale_python_pylint_options = '-d broad-except,missing-docstring,too-many-return-statements,no-else-return --good-names=ir,ic,ip,id,idx,today,rt,df,e,idx,np,a,b,c,d,x,y,z,i,j,f,g,k,m,n,g,t,v,o,pt,ot,tt,p,s,di,fp,to,ii,ti,dl,t,td,Log,log,Math,Stockt0,mm,dd,op,yyyy,YYYY,YYYYMMDD,MM,DD,YYYYMM --extension-pkg-whitelist=lxml --min-public-methods=1 --max-public-methods=30'
+let g:ale_python_pylint_options = '-d broad-except,missing-docstring,too-many-return-statements,no-else-return --good-names=hh,ss,ir,ic,ip,id,today,rt,df,e,idx,np,a,b,c,d,x,y,z,i,j,f,g,k,m,n,g,t,v,o,pt,ot,tt,p,s,di,fp,to,ii,ti,dl,t,td,Log,log,Math,Stockt0,mm,dd,op,yyyy,YYYY,YYYYMMDD,MM,DD,YYYYMM,yyyy,mm,dd,dt,ms --extension-pkg-whitelist=lxml --min-public-methods=1 --max-public-methods=30'
 let g:ale_c_gcc_options = '-Wall -O0 -std=c99 -I ~/auto -isystem /opt/include -isystem /opt/auto-stable'
 let g:ale_cpp_gcc_options = '-Wall -Wextra -O0 -std=c++14 -I ~/auto -isystem /opt/include -isystem /usr/include/python3.5/ -isystem /usr/local/lib/python3.5/dist-packages/numpy/core/include/ -isystem /opt/3rd/wind/include -isystem /usr/local/lib/python3.5/dist-packages/numpy/core/include/ -isystem /opt/auto-stable' 
 let g:ale_c_clang_options = '-Wall -O0 -std=c99 -I ~/auto -I /opt/include -isystem /usr/local/lib/python3.5/dist-packages/numpy/core/include/  -isystem /opt/auto-stable'
