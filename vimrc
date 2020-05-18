@@ -605,7 +605,7 @@ highlight SpellLocal term=underline cterm=underline
 set path+=/opt/include
 set path+=~/auto
 set path+=/usr/include
-set path+=/opt/3rd/wind/include
+set path+=/opt/3rd/tdf3/include
 set path+=/usr/local/include
 set path+=/usr/local/include/tensorflow
 set path+=/usr/local/include/tensorflow/tensorflow/contrib/makefile/gen/host_obj
