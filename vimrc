@@ -691,3 +691,5 @@ endif
 set lazyredraw
 set ttyfast
 
+
+" nnoremap <esc> :nohl<cr>

@@ -366,7 +366,7 @@ Plug 'sgur/vim-textobj-parameter'
 
 Plug 'posva/vim-vue'
 
-Plug 'gauteh/vim-cppman'
+" Plug 'gauteh/vim-cppman'
 
 call plug#end()  
 
