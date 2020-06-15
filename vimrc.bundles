@@ -255,8 +255,7 @@ Plug 'tpope/vim-repeat'
 vmap <Leader>a <Plug>(EasyAlign)
 nmap <Leader>a vip<Plug>(EasyAlign)
 Plug 'junegunn/vim-easy-align'
-let g:easy_align_delimiters = {'/': { 'pattern':         '/\*\*<\|\*/\|//!<', 'delimiter_align': 'l', 'ignore_groups':   [] }, }
-let g:easy_align_delimiters = {',': { 'pattern':         ',', 'delimiter_align': 'l', 'ignore_groups':   [] }, }
+let g:easy_align_delimiters = {'/': { 'pattern':         '/\*\*<\|\*/\|//!<', 'delimiter_align': 'l', 'ignore_groups':   [] }, ',': { 'pattern':         ',', 'delimiter_align': 'l', 'ignore_groups':   [] }, }
 
 
 " 应该是不需要的
