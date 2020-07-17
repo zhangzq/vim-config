@@ -696,7 +696,7 @@ set ttyfast
 "
 " 自动添加引号
 nmap cx' mci'<ESC>lea'<ESC>`c
-nmap cx" mci'<ESC>lea"<ESC>`c
+nmap cx" mci"<ESC>lea"<ESC>`c
 nmap cy' mci'<ESC>A<BACKSPACE>',<ESC>`c
 nmap cy" mci"<ESC>A<BACKSPACE>",<ESC>`c
 
