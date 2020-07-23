@@ -683,11 +683,6 @@ autocmd FileType python nnoremap <leader>ya :0,$!yapf<Cr>
 set conceallevel=0
 set concealcursor=ni
 
-" 导入自定义设置
-if filereadable(expand("~/.vimrc.cusomize"))
-  source ~/.vimrc.cusomize
-endif
-
 set lazyredraw
 set ttyfast
 
@@ -700,3 +695,9 @@ nmap cx" mci"<ESC>lea"<ESC>`c
 nmap cy' mci'<ESC>A<BACKSPACE>',<ESC>`c
 nmap cy" mci"<ESC>A<BACKSPACE>",<ESC>`c
 
+
+
+" 导入自定义设置
+if filereadable(expand("~/.vimrc.cusomize"))
+  source ~/.vimrc.cusomize
+endif
