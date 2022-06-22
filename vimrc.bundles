@@ -168,7 +168,6 @@ let g:ale_cpp_gcc_options = '-Wall -O0 -std=c++14 -I ~/auto -isystem /opt/includ
 " 代码自动补全
 "迄今为止用到的最好的自动VIM自动补全插件
 "重启 :YcmRestartServer
-Plug 'Valloric/YouCompleteMe'
 "youcompleteme  默认tab  s-tab 和自动补全冲突
 "let g:ycm_key_list_select_completion=['<c-n>']
 " let g:ycm_key_list_select_completion = ['<Down>']
@@ -204,6 +203,8 @@ let g:ycm_filetype_blacklist = {
       \ 'gitcommit' : 1,
       \}
 
+Plug 'Valloric/YouCompleteMe'
+
 " 代码片段快速插入 (snippets中,是代码片段资源,需要学习)
 " 从来没用过，可能是YouCompleteMe里需要的
 " Plug 'SirVer/ultisnips'
@@ -215,7 +216,6 @@ let g:ycm_filetype_blacklist = {
 " imap <c-j> <Plug>(complete_parameter#goto_next_parameter)
 " smap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
 " imap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
-
 
 
 
