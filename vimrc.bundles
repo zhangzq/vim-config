@@ -30,10 +30,29 @@ Plug 'mechatroner/rainbow_csv'
 Plug 'terryma/vim-multiple-cursors'
 
 " 快速搜索文件打开。有个这个之后 :e 不用输入文件路径和全名了。
-Plug 'kien/ctrlp.vim'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.d,*.o,*.bin,*.a,*.lib     " MacOSX/Linux
+" Plug 'kien/ctrlp.vim'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.d,*.o,*.bin,*.a,*.lib,*/.git/*,*/api/*     " MacOSX/Linux
 
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh'  }
+
+let g:Lf_ShortcutF = '<c-p>'
+nmap <unique> <leader>fr <Plug>LeaderfRgPrompt
+nmap <unique> <leader>fra <Plug>LeaderfRgCwordLiteralNoBoundary
+nmap <unique> <leader>frb <Plug>LeaderfRgCwordLiteralBoundary
+nmap <unique> <leader>frc <Plug>LeaderfRgCwordRegexNoBoundary
+nmap <unique> <leader>frd <Plug>LeaderfRgCwordRegexBoundary
+vmap <unique> <leader>fra <Plug>LeaderfRgVisualLiteralNoBoundary
+vmap <unique> <leader>frb <Plug>LeaderfRgVisualLiteralBoundary
+vmap <unique> <leader>frc <Plug>LeaderfRgVisualRegexNoBoundary
+vmap <unique> <leader>frd <Plug>LeaderfRgVisualRegexBoundary
+
+let g:Lf_WorkingDirectoryMode = 'c'
+let g:Lf_UseVersionControlTool = 0
+let g:Lf_DefaultExternalTool = "rg"
+
+let g:Lf_WildIgnore={ 'file':['*.lib', '*.a', '*.o', '*.d', '*.so', ],'dir':['tmp', '.git', 'api', 'attachments', 'images', 'img', 'download',  ]}
+
+
 
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = {
