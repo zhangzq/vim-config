@@ -237,11 +237,11 @@ Plug 'Valloric/YouCompleteMe'
 " imap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
 
 
-
 " 快速注释
 " ,cSPACE 快速切换注释，能自动识别文件类型
 Plug 'scrooloose/nerdcommenter'
 let g:NERDSpaceDelims=1
+let g:NERDAltDelims_python = 1
 
 
 " 快速加入修改环绕字符，示例，其中*为光标位置
