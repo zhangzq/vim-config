@@ -35,15 +35,11 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.d,*.o,*.bin,*.a,*.lib,*/.git/*,*/api/
 
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh'  }
 let g:Lf_ShortcutF = '<c-p>'
-nmap <unique> <leader>fr <Plug>LeaderfRgPrompt
-nmap <unique> <leader>fra <Plug>LeaderfRgCwordLiteralNoBoundary
-nmap <unique> <leader>frb <Plug>LeaderfRgCwordLiteralBoundary
-nmap <unique> <leader>frc <Plug>LeaderfRgCwordRegexNoBoundary
-nmap <unique> <leader>frd <Plug>LeaderfRgCwordRegexBoundary
-vmap <unique> <leader>fra <Plug>LeaderfRgVisualLiteralNoBoundary
-vmap <unique> <leader>frb <Plug>LeaderfRgVisualLiteralBoundary
-vmap <unique> <leader>frc <Plug>LeaderfRgVisualRegexNoBoundary
-vmap <unique> <leader>frd <Plug>LeaderfRgVisualRegexBoundary
+" nmap <unique> <leader>fr <Plug>LeaderfRgPrompt
+" nmap <unique> <leader>fra <Plug>LeaderfRgCwordLiteralNoBoundary
+" nmap <unique> <leader>frb <Plug>LeaderfRgCwordLiteralBoundary
+" nmap <unique> <leader>frc <Plug>LeaderfRgCwordRegexNoBoundary
+" nmap <unique> <leader>frd <Plug>LeaderfRgCwordRegexBoundary
 
 let g:Lf_WorkingDirectoryMode = 'c'
 let g:Lf_UseVersionControlTool = 0
@@ -163,6 +159,9 @@ let g:airline#extensions#ale#enabled = 1
 
 let g:ale_c_gcc_options = '-Wall -O0 -std=c99 -I ~/auto -I /opt/include'
 let g:ale_cpp_gcc_options = '-Wall -O0 -std=c++14 -I ~/auto -isystem /opt/include -isystem /usr/include/python3.5/ -isystem /usr/local/lib/python3.5/dist-packages/numpy/core/include/' 
+
+
+nnoremap <silent> <F6> :ALENext<CR>
 
 
 

@@ -295,8 +295,8 @@ endfunction
 " nnoremap <silent> <End>  :call WrapCommand('down', 'c')<CR>
 
 " <C-Home> and <C-End> go up and down the location list and wrap around
-map <F6> :call WrapCommand('down', 'l')<CR>
-imap <F6> <ESC>:call WrapCommand('down', 'l')<CR>
+" map <F6> :call WrapCommand('down', 'l')<CR>
+" imap <F6> <ESC>:call WrapCommand('down', 'l')<CR>
 
 
 " map <F6> :lnext<CR>
