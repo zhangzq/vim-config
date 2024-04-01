@@ -1,5 +1,28 @@
 " 自定义设置请放在 ~/.vimrc.customize 文件里，配置将在最后自动导入。
 
+function! SetYCMLogFiles()
+    " 获取当前用户名。在 Unix-like 系统上，使用 $USER，在 Windows 上，使用 $USERNAME。
+    let l:username = has('win32') ? $USERNAME : $USER
+    " 获取当前时间戳
+    let l:timestamp = strftime("%Y-%m-%d_%H-%M-%S")
+    " 定义日志文件的基础路径，并加入用户名作为子目录的一部分
+    let l:log_dir = '/tmp/ycm_' . l:username . '/'
+    " 检查目录是否存在，如果不存在，则创建它
+    if !isdirectory(l:log_dir)
+        call mkdir(l:log_dir, "p")
+    endif
+    " 构造 STDERR 和 STDOUT 日志文件的完整路径
+    let l:stderr_log_file = l:log_dir . 'ycm_stderr_' . l:timestamp . '.log'
+    let l:stdout_log_file = l:log_dir . 'ycm_stdout_' . l:timestamp . '.log'
+    " 设置环境变量
+    call setenv('YCM_STDERR_LOG_FILE', l:stderr_log_file)
+    call setenv('YCM_STDOUT_LOG_FILE', l:stdout_log_file)
+endfunction
+
+" 在 Vim 启动时调用该函数
+autocmd VimEnter * call SetYCMLogFiles()
+
+
 " 修改leader键
 let mapleader = ','
 let g:mapleader = ','
