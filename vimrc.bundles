@@ -40,6 +40,11 @@ let g:Lf_ShortcutF = '<c-p>'
 " nmap <unique> <leader>frb <Plug>LeaderfRgCwordLiteralBoundary
 " nmap <unique> <leader>frc <Plug>LeaderfRgCwordRegexNoBoundary
 " nmap <unique> <leader>frd <Plug>LeaderfRgCwordRegexBoundary
+nmap <unique> <leader>fr <Plug>LeaderfRgPrompt
+nmap <unique> <leader>fra <Plug>LeaderfRgCwordLiteralNoBoundary
+nmap <unique> <leader>frb <Plug>LeaderfRgCwordLiteralBoundary
+nmap <unique> <leader>frc <Plug>LeaderfRgCwordRegexNoBoundary
+nmap <unique> <leader>frd <Plug>LeaderfRgCwordRegexBoundary
 
 let g:Lf_WorkingDirectoryMode = 'c'
 let g:Lf_UseVersionControlTool = 0
