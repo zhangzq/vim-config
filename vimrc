@@ -617,9 +617,7 @@ set path+=/usr/local/include/tensorflow/tensorflow/contrib/makefile/gen/protobuf
 set path+=/usr/local/include/tensorflow/tensorflow/contrib/makefile/gen/proto
 set path+=/usr/local/include/tensorflow/tensorflow/contrib/makefile/gen/proto_text
 
-set colorcolumn=101
-execute "set colorcolumn=" . join(range(101,180), ',')
-
+set colorcolumn=98,120
 
 
 " function LargeFileSter()
@@ -696,6 +694,7 @@ nmap cy' mci'<ESC>A<BACKSPACE>',<ESC>`c
 nmap cy" mci"<ESC>A<BACKSPACE>",<ESC>`c
 
 
+autocmd FileType javascript,vue setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 
 " 导入自定义设置
 if filereadable(expand("~/.vimrc.cusomize"))

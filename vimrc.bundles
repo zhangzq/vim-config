@@ -138,7 +138,7 @@ nnoremap <Leader>s :call ToggleErrors()<cr>
 
 
 Plug 'w0rp/ale' 
-let g:ale_linters = {'cpp': [], 'c': [], 'python': ['pylint', ], }
+let g:ale_linters = {'cpp': [], 'c': [], 'python': ['pylint', ], 'javascript': ['eslint', ], 'vue': ['eslint', ],  }
 let g:ale_fixers = { 'javascript': ['eslint'], 'python': ['autopep8'] }
 let g:ale_python_pylint_options = '-d broad-except,missing-docstring,too-many-return-statements,no-else-return,import-outside-toplevel --good-names=c1,c2,im,df,h,r,d,hh,ss,ir,ic,ip,id,today,rt,e,idx,np,a,b,c,d,x,y,z,i,j,f,g,k,m,n,g,t,v,o,pt,ot,tt,p,s,di,fp,nc,up,to,ii,ti,dl,t,td,ap,Log,log,Math,Stockt0,mm,dd,op,yyyy,YYYY,YYYYMMDD,MM,DD,lu,YYYYMM,yyyy,mm,dd,dt,ms --extension-pkg-whitelist=lxml --min-public-methods=1 --max-public-methods=30'
 let g:ale_python_flake8_options = '--ignore broad-except,missing-docstring,too-many-return-statements,no-else-return,import-outside-toplevel --good-names=im,df,h,r,d,hh,ss,ir,ic,ip,id,today,rt,e,idx,np,a,b,c,d,x,y,z,i,j,f,g,k,m,n,g,t,v,o,pt,ot,tt,p,s,di,fp,nc,up,to,ii,ti,dl,t,td,ap,Log,log,Math,Stockt0,mm,dd,op,yyyy,YYYY,YYYYMMDD,MM,DD,lu,YYYYMM,yyyy,mm,dd,dt,ms --extension-pkg-whitelist=lxml --min-public-methods=1 --max-public-methods=30'
@@ -274,7 +274,7 @@ Plug 'tpope/vim-repeat'
 vmap <Leader>a <Plug>(EasyAlign)
 nmap <Leader>a vip<Plug>(EasyAlign)
 Plug 'junegunn/vim-easy-align'
-let g:easy_align_delimiters = {'/': { 'pattern':         '/\*\*<\|\*/\|//!<', 'delimiter_align': 'l', 'ignore_groups':   [] }, ',': { 'pattern':         ',', 'delimiter_align': 'l', 'ignore_groups':   [] }, }
+let g:easy_align_delimiters = {'/': { 'pattern':         '/\*\*<\|\*/\|//!<', 'delimiter_align': 'l', 'ignore_groups':   [] }, ',': { 'pattern':         ',', 'delimiter_align': 'l', 'ignore_groups':   [] }, '#': {'pattern':'#'} }
 
 
 " 应该是不需要的
@@ -380,12 +380,28 @@ imap <F7> <ESC>:wa<CR>:AsyncRun make -j<CR><CR><CR>
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-syntax'
-Plug 'kana/vim-textobj-function', { 'for':['c', 'cpp', 'vim', 'java'] }
+Plug 'kana/vim-textobj-function'
 Plug 'sgur/vim-textobj-parameter'
 
 Plug 'posva/vim-vue'
 
-" Plug 'gauteh/vim-cppman'
+Plug 'vim-autoformat/vim-autoformat'
+noremap <Leader>f :Autoformat<CR>
+
+let g:formatdef_prettier = "'prettier --stdin --stdin-filepath '.expand('%:p')"
+let g:formatters_javascript = ['prettier']
+let g:formatters_css = ['prettier']
+let g:formatters_html = ['prettier']
+let g:formatters_json = ['prettier']
+let g:formatters_typescript = ['prettier']
+let g:formatters_markdown = ['prettier']
+let g:formatters_vue = ['prettier']
+let g:formatters_yaml = ['prettier']
+let g:formatters_graphql = ['prettier']
+
+let g:formatdef_black = "'black -'"
+let g:formatdef_ruff = "'ruff'"
+let g:formatters_python = ['ruff', 'black']
 
 call plug#end()  
 
